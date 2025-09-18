@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backstreet Boys в Алматы - Спасибо за работу!</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+  </head>
+  <body>
+    <main class="glass-box">
+      <div class="logo-bar">
+        <div class="logo-circle">
+          <img src="https://i.redd.it/pfj9bgmh5k4e1.png" alt="Backstreet Boys" class="bsb-logo">
+        </div>
+      </div>
+      <h1>Спасибо за работу!</h1>
+      <p class="tagline">Backstreet Boys в Алматы</p>
+
+      <div class="thank-you-message">
+        <p>Уважаемый(ая) <span id="volunteerName"></span>!</p>
+        <p>Благодарим вас за помощь в организации концерта.</p>
+        <p>Время окончания смены: <span id="leaveTime"></span></p>
+      </div>
+
+      <footer>© Backstreet Boys Almaty Concert 2025</footer>
+    </main>
+    <div class="corner-ornament top-right"></div>
+    <div class="corner-ornament bottom-left"></div>
+
+    <script>
+      // Получаем параметры из URL
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name');
+      const surname = params.get('surname');
+      const leaveTime = params.get('leaveTime');
+
+      // Отображаем данные
+      document.getElementById('volunteerName').textContent = `${name} ${surname}`;
+      document.getElementById('leaveTime').textContent = new Date(leaveTime).toLocaleString('ru-RU');
+    </script>
+  </body>
+</html>
